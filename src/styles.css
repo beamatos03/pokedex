@@ -8,3 +8,7 @@
   color: #ffcc03;
   -webkit-text-stroke: 3px #2a75bb; /* width and color */
 }
+
+.poke-info{
+  background-color: #2a75bb;
+}

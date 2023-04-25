@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class PokeService {
 
   constructor(private http: HttpClient) {}
-  getPoke(id : Number): Observable<Poke>{
-  return this.http.get<Poke>(`https://pokeapi.co/api/v2/pokemon/${id}`)
+  getPoke(id : number): Observable<Poke>{
+  return this.http.get<Poke>(`https://pokeapi.co/api/v2/pokemon/${id}`);
 }
 }

@@ -1,31 +1,43 @@
-<div class="container">
-  <div class="col">
-    <button (onclick)="decrease()">
-    -
-    </button>
-  </div>
-    <div class=" conteudo text-center bg-light rounded-5 shadow">
-      <div class="display-2 title">
-        PokéDeX
-      </div>
-      <div class="row">
-        <div class="col">
-          <img [src]="pegarImagem()" [alt]="poke.name" width="400px">
-        </div>
-      </div>
-      <div class="card text-light">
-        <div class="display-6 card-header bg-danger">
-          {{poke.name}}
-        </div>
-        <div class="row">
-          <div class="col"></div>
-          <div class="col"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <button (onclick)="increase()">
-      +
+<div class="container" style="min-height: 100vh; min-width: 100vh;">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-1">
+      <button (click)="decrease()" class="btn btn-danger btn-lg">
+      <
       </button>
     </div>
+      <div class="col-md-10 conteudo text-center bg-light rounded-5 shadow">
+        <div class="display-2 title mb-2">
+          PokéDeX
+        </div>
+        <div class="row">
+          <div class="col">
+            <img [src]="pegarImagem()" [alt]="poke.name" width="300px">
+          </div>
+        </div>
+        <div class="card w-100 text-light poke-info">
+          <div class="display-6 card-header">
+            {{poke.name | uppercase}}
+          </div>
+          <div class="row">
+            <div class="col">Altura:</div>
+            <div class="col">{{poke.height}}</div>
+          </div>
+          <div class="row">
+            <div class="col">Peso:</div>
+            <div class="col">{{poke.weight}}</div>
+          </div>
+          <div class="row">
+            <div class="col">Altura:</div>
+            <div class="col">{{poke.height}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <button (click)="increase()" class="btn btn-danger btn-lg">
+        >
+        </button>
+      </div>
+    </div>
+  
   </div>
+  

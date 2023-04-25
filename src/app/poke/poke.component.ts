@@ -9,13 +9,7 @@ import { PokeService } from '../poke.service';
 })
 export class PokeComponent implements OnInit{
 
-  id : Number = 5;
 
-  increase(){
-
-  }
-  decrease(){
-  }
 
   constructor(private PokeService: PokeService){}
 
@@ -23,6 +17,32 @@ export class PokeComponent implements OnInit{
   ngOnInit(): void {
     this.getPokemon();
   }
+
+  id : number = 1;
+  
+  number = this.id;
+
+  increase(){
+    if(this.id<1008){
+      this.id++;
+    }
+    else{
+      this.id = 1;
+    }
+    this.getPokemon();
+    
+  }
+  
+  decrease(){
+    if(this.id>1){
+      this.id--;
+    }
+    else{
+      this.id = 1008;
+    }
+    this.getPokemon();
+    
+  }  
 
   getPokemon() {
     this.PokeService.getPoke(this.id).subscribe(
@@ -40,12 +60,3 @@ export class PokeComponent implements OnInit{
   }
 
 }
-
-/*poke : Poke = {
-  "name":"Bulbasaur",
-  "sprite":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  "height": 7,
-  "weight": 69,
-} as Poke;
-}
-*/
