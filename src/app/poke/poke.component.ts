@@ -11,6 +11,12 @@ export class PokeComponent implements OnInit{
 
   id : Number = 5;
 
+  increase(){
+
+  }
+  decrease(){
+  }
+
   constructor(private PokeService: PokeService){}
 
 
