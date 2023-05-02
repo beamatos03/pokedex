@@ -2,9 +2,14 @@ import { Types } from "./types";
 
 export interface Poke
 {
+id: number;
  name :string;
  height : number;
  weight: number;
- type : Types[];
+ types:{
+  type: {
+      name: string
+  }
+}[];
 
 }

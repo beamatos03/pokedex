@@ -1,4 +1,5 @@
 export interface Types
 {
-    name: number
+    name: string;
+    slot: number;
 }

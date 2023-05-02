@@ -1,3 +1,4 @@
+import { getLocaleExtraDayPeriodRules } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Poke } from '../poke';
 import { PokeService } from '../poke.service';
@@ -19,7 +20,7 @@ export class PokeComponent implements OnInit{
   }
 
   id : number = 1;
-  
+
   number = this.id;
 
   increase(){
@@ -30,9 +31,9 @@ export class PokeComponent implements OnInit{
       this.id = 1;
     }
     this.getPokemon();
-    
+
   }
-  
+
   decrease(){
     if(this.id>1){
       this.id--;
@@ -41,8 +42,8 @@ export class PokeComponent implements OnInit{
       this.id = 1008;
     }
     this.getPokemon();
-    
-  }  
+
+  }
 
   getPokemon() {
     this.PokeService.getPoke(this.id).subscribe(
@@ -57,6 +58,11 @@ export class PokeComponent implements OnInit{
 
   pegarImagem(){
    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.id}.png`;
+  }
+
+
+  getType(){
+    return this.poke.types[2].type.name;
   }
 
 }
