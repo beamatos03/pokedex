@@ -61,7 +61,7 @@ export class PokeComponent implements OnInit{
   }
 
 
-  getType(){
+  getType(): string []{
 
     let typeNames: string[] = [];
    this.poke.types.map(t => {
@@ -70,6 +70,8 @@ export class PokeComponent implements OnInit{
 
       console.log(typeNames);
   })
+
+  return typeNames;
 
   
 }}
