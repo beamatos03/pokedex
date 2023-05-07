@@ -62,7 +62,14 @@ export class PokeComponent implements OnInit{
 
 
   getType(){
-    return this.poke.types[2].type.name;
-  }
 
-}
+    let typeNames: string[] = [];
+   this.poke.types.map(t => {
+  
+      typeNames.push(t.type.name);
+
+      console.log(typeNames);
+  })
+
+  
+}}
