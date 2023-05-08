@@ -71,7 +71,20 @@ export class PokeComponent implements OnInit{
       console.log(typeNames);
   })
 
-  return typeNames;
+  return typeNames;  
+}
 
-  
-}}
+getIcon(type: string){
+  return `https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/5781623f147f1bf850f426cfe1874ba56a9b75ee/icons/${type}.svg`
+}
+
+formatarNum(){
+  let number = this.id.toString();
+  while(number.length < 4){
+    number = '0' + number;
+  }
+
+  return number;
+}
+
+}

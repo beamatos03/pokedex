@@ -13,30 +13,40 @@
         <div class="row">
           <div class="col">
             <div class="display-6">
-             nº 000{{poke.id}} - {{poke.name | titlecase}}
+             {{formatarNum()}} - {{poke.name | titlecase}}
             </div>
-            <img [src]="pegarImagem()" [alt]="poke.name" width="300px">
+            <div class="row justify-content-center">
+              <div *ngFor="let type of getType()" class="col-sm-6 {{type}} m-2 rounded-circle d-flex">
+                <img [src]="getIcon(type)" width="50px">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <img [src]="pegarImagem()" [alt]="poke.name" width="300px">
+              </div>
+              <div class="col-md-6">
+                <div class="m-5 text-dark">
+                  <div class="row">
+                    <div class="col">Altura:</div>
+                    <div class="col">{{poke.height/10}} m</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Peso:</div>
+                    <div class="col">{{poke.weight/10}} kg</div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            
           </div>
-        </div>
-        <div class="card w-100 text-dark">
-          <div class="row">
-            <div class="col">Altura:</div>
-            <div class="col">{{poke.height/10}} m</div>
-          </div>
-          <div class="row">
-            <div class="col">Peso:</div>
-            <div class="col">{{poke.weight/10}} kg</div>
-          </div>
-          <div class="row">
-            <div class="col">Tipo:</div>
-            <div *ngFor="let type of getType()" class="col">{{type}}</div>
-          </div>
-        </div>
+
       </div>
     </div>
       <div class="col-md-1">
         <button (click)="increase()" class="btn btn-danger btn-lg">
-        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"viewBox="0 0 16 16">
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
         </button>
       </div>
     </div>
