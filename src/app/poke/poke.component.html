@@ -26,20 +26,20 @@
               <div class="col-md-6">
                 <img [src]="pegarImagem()" [alt]="poke.name" width="300px">
               </div>
-              <div class="col-md-6 p-5">
-                    <table class="table table-bordered {{getType()[0]}} text-light">
+              <div class="col-lg-6 p-5">
+                    <table class="table table-bordered rounded-3 {{getType()[0]}} text-light">
                       <tbody>
-                      <tr>
-                        <th scope="row" class="text-dark">Peso</th>
-                        <td>{{poke.weight/10}} m</td>
+                      <tr class="table-active text-light">
+                        <th scope="row" class="">Peso</th>
+                        <td [attr.colspan]="getAbilities().length">{{poke.weight/10}} m</td>
                       </tr>
                       <tr>
-                        <th scope="row" class="text-dark">Altura</th>
-                        <td>{{poke.height/10}} m</td>
+                        <th scope="row" class="">Altura</th>
+                        <td [attr.colspan]="getAbilities().length">{{poke.height/10}} m</td>
                       </tr>
-                      <tr>
-                        <th scope="row" class="text-dark">Habilidades: </th>
-                        <td>Larry</td>
+                      <tr class="table-active text-light">
+                        <th scope="row" class="">Habilidades: </th>
+                        <td *ngFor="let ability of getAbilities()"><span>{{ability | titlecase}} </span></td>
                       </tr>
                     </tbody>
                   </table>

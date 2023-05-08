@@ -1,4 +1,4 @@
-import { Types } from "./types";
+
 
 export interface Poke
 {
@@ -11,5 +11,16 @@ id: number;
       name: string
   }
 }[];
+stats:
+    {
+    base_stat: number,
+    stat: {
+    name: string
+    }}[];
 
+abilities:{
+  ability:{
+    name: string;
+  }
+}[];
 }

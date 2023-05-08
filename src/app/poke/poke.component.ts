@@ -68,10 +68,29 @@ export class PokeComponent implements OnInit{
   
       typeNames.push(t.type.name);
 
-      console.log(typeNames);
   })
 
   return typeNames;  
+}
+
+
+getAbilities(): string []{
+
+  let typeAbilities: string[] = [];
+ this.poke.abilities.map(t => {
+
+    typeAbilities.push(t.ability.name);
+    
+})
+return typeAbilities;  
+}
+
+
+qtdAbility(): string{
+  let abilities = this.getAbilities();
+  let qtd = abilities.length.toString();
+
+  return qtd;
 }
 
 getIcon(type: string){
