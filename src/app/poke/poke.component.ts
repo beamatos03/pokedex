@@ -65,12 +65,12 @@ export class PokeComponent implements OnInit{
 
     let typeNames: string[] = [];
    this.poke.types.map(t => {
-  
+
       typeNames.push(t.type.name);
 
   })
 
-  return typeNames;  
+  return typeNames;
 }
 
 
@@ -80,17 +80,31 @@ getAbilities(): string []{
  this.poke.abilities.map(t => {
 
     typeAbilities.push(t.ability.name);
-    
+
 })
-return typeAbilities;  
+return typeAbilities;
 }
 
+getStatNames(): string []{
 
-qtdAbility(): string{
-  let abilities = this.getAbilities();
-  let qtd = abilities.length.toString();
+  let statNames: string[] = [];
+ this.poke.stats.map(t => {
 
-  return qtd;
+    statNames.push(t.stat.name);
+
+})
+return statNames;
+}
+
+getStatNum(): string []{
+
+  let statNum: string[] = [];
+ this.poke.stats.map(t => {
+
+    statNum.push(t.base_stat + "px");
+
+})
+return statNum;
 }
 
 getIcon(type: string){
